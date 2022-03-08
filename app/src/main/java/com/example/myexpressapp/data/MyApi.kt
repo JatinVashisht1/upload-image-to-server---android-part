@@ -12,7 +12,7 @@ interface MyApi {
     suspend fun getResponse(): DtoResponse
 
     @Multipart
-    @POST("/file/upload")
+    @POST("/upload")
     suspend fun postImage(
         @Part
         image: MultipartBody.Part

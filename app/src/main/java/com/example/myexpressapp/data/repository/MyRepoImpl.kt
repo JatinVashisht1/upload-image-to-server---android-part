@@ -38,9 +38,9 @@ class MyRepoImpl(
             val bos = ByteArrayOutputStream()
             stream.compress(Bitmap.CompressFormat.PNG, 0, bos) // YOU can also save it in JPEG
             val bitmapdata = bos.toByteArray()
-            val request =  RequestBody.create("image/*".toMediaTypeOrNull(), bitmapdata)  // read all bytes using kotlin extension
+            val request =  RequestBody.create("image/jpeg".toMediaTypeOrNull(), bitmapdata)  // read all bytes using kotlin extension
             val filePart = MultipartBody.Part.createFormData(
-                    "file",
+                    "myImage",
                     "eminem.jpg",
                     request
                 )
